@@ -3,7 +3,6 @@ name: Deploy static site to server
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 jobs:
@@ -14,16 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH
+      - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.TENCENT_SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H "${{ secrets.TENCENT_SSH_HOST }}" >> ~/.ssh/known_hosts
-      
-      - name: Test SSH
-        run: ssh -i ~/.ssh/id_rsa ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }} "echo SSH OK"
-      
-      - name: Deploy
+          ssh-keyscan -p 22 -H "${{ secrets.TENCENT_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Debug SSH files (临时可移除)
         run: |
-          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" ./ ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }}:/data/wwwroot/webtech.wiki/
+          ls -la ~/.ssh
+          cat ~/.ssh/known_hosts
+
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }} "echo SSH connected"
+
+      - name: Deploy static files to server via rsync
+        run: |
+          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" ./ ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }}:/data/wwwroot/webtech.wiki/
