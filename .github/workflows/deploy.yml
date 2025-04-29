@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy static files to server
         run: |
-          rsync -avz --delete ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/your/server/path/
+          rsync -avz --delete ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/wwwroot/webtech.wiki
