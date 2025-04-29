@@ -13,22 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up SSH
+      - name: Deploy via SSH and rsync
         run: |
+          # 设置 SSH 环境
           mkdir -p ~/.ssh
           echo "${{ secrets.TENCENT_SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+
+          # 添加远程主机 SSH 指纹
           ssh-keyscan -p 22 -H "${{ secrets.TENCENT_SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Debug SSH files (临时可移除)
-        run: |
-          ls -la ~/.ssh
-          cat ~/.ssh/known_hosts
-
-      - name: Test SSH connection
-        run: |
+          # 测试 SSH 是否连通
+          echo "Testing SSH connection..."
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }} "echo SSH connected"
 
-      - name: Deploy static files to server via rsync
-        run: |
+          # 部署
+          echo "Starting rsync deployment..."
           rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" ./ ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }}:/data/wwwroot/webtech.wiki/
