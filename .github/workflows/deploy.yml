@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy static files to server
         run: |
-          rsync -avz --delete ./ ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }}:/data/wwwroot/webtech.wiki
+          rsync -avz --delete ./ ${{ secrets.TENCENT_SSH_USER }}@${{ secrets.TENCENT_SSH_HOST }}:/data/wwwroot/webtech.wiki/
