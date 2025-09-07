@@ -268,6 +268,21 @@ footer {
     transform: translateY(0);
 }
 
+.beian-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    margin-right: 6px;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+    position: relative;
+    top: -1px;
+}
+
+.icp-info a:hover .beian-icon {
+    filter: brightness(1.2);
+}
+
 @media (max-width: 768px) {
     .logo {
         font-size: 2.5rem;
