@@ -268,6 +268,19 @@ footer {
     transform: translateY(0);
 }
 
+.icp-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.icp-item {
+    display: flex;
+    align-items: center;
+}
+
 .beian-icon {
     width: 16px;
     height: 16px;
@@ -283,7 +296,17 @@ footer {
     filter: brightness(1.2);
 }
 
+/* 移动端响应式样式 */
 @media (max-width: 768px) {
+    .icp-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .icp-item {
+        justify-content: center;
+    }
+    
     .logo {
         font-size: 2.5rem;
     }
