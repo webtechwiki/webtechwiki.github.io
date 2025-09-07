@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTech.wiki - 技术导航</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">WebTech.wiki</h1>
+            <p class="subtitle">精选技术资源导航 | 开发者的技术宝库</p>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="搜索技术资源..." id="searchInput">
+                <button class="search-btn" onclick="searchSites()">🔍</button>
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="filterCategory('all')">全部</button>
+                <button class="filter-tab" onclick="filterCategory('frontend')">前端</button>
+                <button class="filter-tab" onclick="filterCategory('backend')">后端</button>
+                <button class="filter-tab" onclick="filterCategory('mobile')">移动端</button>
+                <button class="filter-tab" onclick="filterCategory('ai')">AI/ML</button>
+            </div>
+        </header>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">精选网站</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">技术分类</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10k+</span>
+                <span class="stat-label">开发者访问</span>
+            </div>
+        </div>
+
+        <div class="categories" id="categories">
+            <div class="category" data-category="frontend">
+                <div class="category-title">
+                    <div class="category-icon frontend">🎨</div>
+                    前端开发
+                </div>
+                <div class="links">
+                    <a href="https://developer.mozilla.org" class="link-item" target="_blank">MDN Web Docs</a>
+                    <a href="https://reactjs.org" class="link-item" target="_blank">React</a>
+                    <a href="https://vuejs.org" class="link-item" target="_blank">Vue.js</a>
+                    <a href="https://angular.io" class="link-item" target="_blank">Angular</a>
+                    <a href="https://webpack.js.org" class="link-item" target="_blank">Webpack</a>
+                    <a href="https://vitejs.dev" class="link-item" target="_blank">Vite</a>
+                    <a href="https://tailwindcss.com" class="link-item" target="_blank">Tailwind CSS</a>
+                    <a href="https://nextjs.org" class="link-item" target="_blank">Next.js</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="backend">
+                <div class="category-title">
+                    <div class="category-icon backend">⚙️</div>
+                    后端开发
+                </div>
+                <div class="links">
+                    <a href="https://nodejs.org" class="link-item" target="_blank">Node.js</a>
+                    <a href="https://expressjs.com" class="link-item" target="_blank">Express.js</a>
+                    <a href="https://spring.io" class="link-item" target="_blank">Spring</a>
+                    <a href="https://django.org" class="link-item" target="_blank">Django</a>
+                    <a href="https://flask.palletsprojects.com" class="link-item" target="_blank">Flask</a>
+                    <a href="https://gin-gonic.com" class="link-item" target="_blank">Gin</a>
+                    <a href="https://nestjs.com" class="link-item" target="_blank">NestJS</a>
+                    <a href="https://fastapi.tiangolo.com" class="link-item" target="_blank">FastAPI</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="database">
+                <div class="category-title">
+                    <div class="category-icon database">🗄️</div>
+                    数据库
+                </div>
+                <div class="links">
+                    <a href="https://www.mysql.com" class="link-item" target="_blank">MySQL</a>
+                    <a href="https://www.postgresql.org" class="link-item" target="_blank">PostgreSQL</a>
+                    <a href="https://www.mongodb.com" class="link-item" target="_blank">MongoDB</a>
+                    <a href="https://redis.io" class="link-item" target="_blank">Redis</a>
+                    <a href="https://www.elastic.co" class="link-item" target="_blank">Elasticsearch</a>
+                    <a href="https://neo4j.com" class="link-item" target="_blank">Neo4j</a>
+                    <a href="https://cassandra.apache.org" class="link-item" target="_blank">Cassandra</a>
+                    <a href="https://www.influxdata.com" class="link-item" target="_blank">InfluxDB</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="devops">
+                <div class="category-title">
+                    <div class="category-icon devops">🚀</div>
+                    DevOps & 云服务
+                </div>
+                <div class="links">
+                    <a href="https://www.docker.com" class="link-item" target="_blank">Docker</a>
+                    <a href="https://kubernetes.io" class="link-item" target="_blank">Kubernetes</a>
+                    <a href="https://aws.amazon.com" class="link-item" target="_blank">AWS</a>
+                    <a href="https://azure.microsoft.com" class="link-item" target="_blank">Azure</a>
+                    <a href="https://cloud.google.com" class="link-item" target="_blank">Google Cloud</a>
+                    <a href="https://www.jenkins.io" class="link-item" target="_blank">Jenkins</a>
+                    <a href="https://github.com/features/actions" class="link-item" target="_blank">GitHub Actions</a>
+                    <a href="https://www.terraform.io" class="link-item" target="_blank">Terraform</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="mobile">
+                <div class="category-title">
+                    <div class="category-icon mobile">📱</div>
+                    移动开发
+                </div>
+                <div class="links">
+                    <a href="https://reactnative.dev" class="link-item" target="_blank">React Native</a>
+                    <a href="https://flutter.dev" class="link-item" target="_blank">Flutter</a>
+                    <a href="https://ionicframework.com" class="link-item" target="_blank">Ionic</a>
+                    <a href="https://developer.android.com" class="link-item" target="_blank">Android</a>
+                    <a href="https://developer.apple.com" class="link-item" target="_blank">iOS</a>
+                    <a href="https://cordova.apache.org" class="link-item" target="_blank">Cordova</a>
+                    <a href="https://nativescript.org" class="link-item" target="_blank">NativeScript</a>
+                    <a href="https://expo.dev" class="link-item" target="_blank">Expo</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="ai">
+                <div class="category-title">
+                    <div class="category-icon ai">🤖</div>
+                    人工智能 & 机器学习
+                </div>
+                <div class="links">
+                    <a href="https://tensorflow.org" class="link-item" target="_blank">TensorFlow</a>
+                    <a href="https://pytorch.org" class="link-item" target="_blank">PyTorch</a>
+                    <a href="https://scikit-learn.org" class="link-item" target="_blank">Scikit-learn</a>
+                    <a href="https://keras.io" class="link-item" target="_blank">Keras</a>
+                    <a href="https://huggingface.co" class="link-item" target="_blank">Hugging Face</a>
+                    <a href="https://openai.com" class="link-item" target="_blank">OpenAI</a>
+                    <a href="https://www.anaconda.com" class="link-item" target="_blank">Anaconda</a>
+                    <a href="https://jupyter.org" class="link-item" target="_blank">Jupyter</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="design">
+                <div class="category-title">
+                    <div class="category-icon design">🎯</div>
+                    设计工具
+                </div>
+                <div class="links">
+                    <a href="https://www.figma.com" class="link-item" target="_blank">Figma</a>
+                    <a href="https://www.sketch.com" class="link-item" target="_blank">Sketch</a>
+                    <a href="https://www.adobe.com/products/xd.html" class="link-item" target="_blank">Adobe XD</a>
+                    <a href="https://www.canva.com" class="link-item" target="_blank">Canva</a>
+                    <a href="https://dribbble.com" class="link-item" target="_blank">Dribbble</a>
+                    <a href="https://behance.net" class="link-item" target="_blank">Behance</a>
+                    <a href="https://unsplash.com" class="link-item" target="_blank">Unsplash</a>
+                    <a href="https://www.invisionapp.com" class="link-item" target="_blank">InVision</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="tools">
+                <div class="category-title">
+                    <div class="category-icon tools">🛠️</div>
+                    开发工具
+                </div>
+                <div class="links">
+                    <a href="https://code.visualstudio.com" class="link-item" target="_blank">VS Code</a>
+                    <a href="https://github.com" class="link-item" target="_blank">GitHub</a>
+                    <a href="https://gitlab.com" class="link-item" target="_blank">GitLab</a>
+                    <a href="https://www.postman.com" class="link-item" target="_blank">Postman</a>
+                    <a href="https://insomnia.rest" class="link-item" target="_blank">Insomnia</a>
+                    <a href="https://www.atlassian.com/software/jira" class="link-item" target="_blank">Jira</a>
+                    <a href="https://slack.com" class="link-item" target="_blank">Slack</a>
+                    <a href="https://notion.so" class="link-item" target="_blank">Notion</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 WebTech.wiki - 为开发者精心打造的技术导航站点</p>
+            <p>收录优质技术资源，助力开发者成长</p>
+        </footer>
+    </div>
+
+    <script src="./js/index.js" defer></script>
+</body>
+
+</html>
