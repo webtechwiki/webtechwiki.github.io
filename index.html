@@ -21,18 +21,27 @@
                 <button class="filter-tab active" onclick="filterCategory('all')">全部</button>
                 <button class="filter-tab" onclick="filterCategory('frontend')">前端</button>
                 <button class="filter-tab" onclick="filterCategory('backend')">后端</button>
-                <button class="filter-tab" onclick="filterCategory('mobile')">移动端</button>
-                <button class="filter-tab" onclick="filterCategory('ai')">AI/ML</button>
+                <button class="filter-tab" onclick="filterCategory('database')">数据库</button>
+                <button class="filter-tab" onclick="filterCategory('devops')">DevOps</button>
+                <button class="filter-tab" onclick="filterCategory('mobile')">移动开发</button>
+                <button class="filter-tab" onclick="filterCategory('ai')">AL & ML</button>
+                <button class="filter-tab" onclick="filterCategory('cloud_driver')">网盘</button>
+                <button class="filter-tab" onclick="filterCategory('tools')">开发工具</button>
+                <button class="filter-tab" onclick="filterCategory('design')">设计 & 资源</button>
+                <button class="filter-tab" onclick="filterCategory('community')">社区 & 论坛</button>
+                <button class="filter-tab" onclick="filterCategory('personal')">个人工具 & 服务</button>
+                <button class="filter-tab" onclick="filterCategory('api')">API & 文档</button>
+                <button class="filter-tab" onclick="filterCategory('repository')">代码仓库 & 镜像</button>
             </div>
         </header>
 
         <div class="stats">
             <div class="stat-item">
-                <span class="stat-number">200+</span>
+                <span class="stat-number">100+</span>
                 <span class="stat-label">精选网站</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">8</span>
+                <span class="stat-number">10+</span>
                 <span class="stat-label">技术分类</span>
             </div>
             <div class="stat-item">
@@ -45,10 +54,11 @@
             <div class="category" data-category="frontend">
                 <div class="category-title">
                     <div class="category-icon frontend">🎨</div>
-                    前端开发
+                    前端
                 </div>
                 <div class="links">
                     <a href="https://developer.mozilla.org" class="link-item" target="_blank">MDN Web Docs</a>
+                    <a href="https://developer.chrome.com" class="link-item" target="_blank">Chrome Dev</a>
                     <a href="https://reactjs.org" class="link-item" target="_blank">React</a>
                     <a href="https://vuejs.org" class="link-item" target="_blank">Vue.js</a>
                     <a href="https://angular.io" class="link-item" target="_blank">Angular</a>
@@ -56,23 +66,26 @@
                     <a href="https://vitejs.dev" class="link-item" target="_blank">Vite</a>
                     <a href="https://tailwindcss.com" class="link-item" target="_blank">Tailwind CSS</a>
                     <a href="https://nextjs.org" class="link-item" target="_blank">Next.js</a>
+                    <a href="https://www.json.org" class="link-item" target="_blank">JSON</a>
                 </div>
             </div>
 
             <div class="category" data-category="backend">
                 <div class="category-title">
                     <div class="category-icon backend">⚙️</div>
-                    后端开发
+                    后端
                 </div>
                 <div class="links">
-                    <a href="https://nodejs.org" class="link-item" target="_blank">Node.js</a>
-                    <a href="https://expressjs.com" class="link-item" target="_blank">Express.js</a>
                     <a href="https://spring.io" class="link-item" target="_blank">Spring</a>
+                    <a href="https://fastapi.tiangolo.com" class="link-item" target="_blank">FastAPI</a>
                     <a href="https://django.org" class="link-item" target="_blank">Django</a>
                     <a href="https://flask.palletsprojects.com" class="link-item" target="_blank">Flask</a>
                     <a href="https://gin-gonic.com" class="link-item" target="_blank">Gin</a>
+                    <a href="https://www.php.net" class="link-item" target="_blank">PHP</a>
+                    <a href="https://phpunit.de" class="link-item" target="_blank">PHPUnit</a>
+                    <a href="https://nodejs.org" class="link-item" target="_blank">Node.js</a>
+                    <a href="https://expressjs.com" class="link-item" target="_blank">Express.js</a>
                     <a href="https://nestjs.com" class="link-item" target="_blank">NestJS</a>
-                    <a href="https://fastapi.tiangolo.com" class="link-item" target="_blank">FastAPI</a>
                 </div>
             </div>
 
@@ -96,17 +109,16 @@
             <div class="category" data-category="devops">
                 <div class="category-title">
                     <div class="category-icon devops">🚀</div>
-                    DevOps & 云服务
+                    DevOps
                 </div>
                 <div class="links">
                     <a href="https://www.docker.com" class="link-item" target="_blank">Docker</a>
                     <a href="https://kubernetes.io" class="link-item" target="_blank">Kubernetes</a>
-                    <a href="https://aws.amazon.com" class="link-item" target="_blank">AWS</a>
-                    <a href="https://azure.microsoft.com" class="link-item" target="_blank">Azure</a>
-                    <a href="https://cloud.google.com" class="link-item" target="_blank">Google Cloud</a>
                     <a href="https://www.jenkins.io" class="link-item" target="_blank">Jenkins</a>
                     <a href="https://github.com/features/actions" class="link-item" target="_blank">GitHub Actions</a>
                     <a href="https://www.terraform.io" class="link-item" target="_blank">Terraform</a>
+                    <a href="https://www.supervisord.org" class="link-item" target="_blank">Supervisord</a>
+                    <a href="https://www.zabbix.com" class="link-item" target="_blank">Zabbix</a>
                 </div>
             </div>
 
@@ -116,11 +128,11 @@
                     移动开发
                 </div>
                 <div class="links">
+                    <a href="https://developer.android.com" class="link-item" target="_blank">Android</a>
+                    <a href="https://developer.apple.com" class="link-item" target="_blank">iOS</a>
                     <a href="https://reactnative.dev" class="link-item" target="_blank">React Native</a>
                     <a href="https://flutter.dev" class="link-item" target="_blank">Flutter</a>
                     <a href="https://ionicframework.com" class="link-item" target="_blank">Ionic</a>
-                    <a href="https://developer.android.com" class="link-item" target="_blank">Android</a>
-                    <a href="https://developer.apple.com" class="link-item" target="_blank">iOS</a>
                     <a href="https://cordova.apache.org" class="link-item" target="_blank">Cordova</a>
                     <a href="https://nativescript.org" class="link-item" target="_blank">NativeScript</a>
                     <a href="https://expo.dev" class="link-item" target="_blank">Expo</a>
@@ -130,7 +142,7 @@
             <div class="category" data-category="ai">
                 <div class="category-title">
                     <div class="category-icon ai">🤖</div>
-                    人工智能 & 机器学习
+                    AL&ML
                 </div>
                 <div class="links">
                     <a href="https://tensorflow.org" class="link-item" target="_blank">TensorFlow</a>
@@ -138,26 +150,26 @@
                     <a href="https://scikit-learn.org" class="link-item" target="_blank">Scikit-learn</a>
                     <a href="https://keras.io" class="link-item" target="_blank">Keras</a>
                     <a href="https://huggingface.co" class="link-item" target="_blank">Hugging Face</a>
-                    <a href="https://openai.com" class="link-item" target="_blank">OpenAI</a>
                     <a href="https://www.anaconda.com" class="link-item" target="_blank">Anaconda</a>
                     <a href="https://jupyter.org" class="link-item" target="_blank">Jupyter</a>
+                    <a href="https://www.paddlepaddle.org.cn" class="link-item" target="_blank">飞桨PaddlePaddle</a>
+                    <a href="https://d2l.ai" class="link-item" target="_blank">动手学深度学习</a>
                 </div>
             </div>
 
-            <div class="category" data-category="design">
+            <div class="category" data-category="cloud_driver">
                 <div class="category-title">
-                    <div class="category-icon design">🎯</div>
-                    设计工具
+                    <div class="category-icon cloud_driver">☁️</div>
+                    网盘
                 </div>
                 <div class="links">
-                    <a href="https://www.figma.com" class="link-item" target="_blank">Figma</a>
-                    <a href="https://www.sketch.com" class="link-item" target="_blank">Sketch</a>
-                    <a href="https://www.adobe.com/products/xd.html" class="link-item" target="_blank">Adobe XD</a>
-                    <a href="https://www.canva.com" class="link-item" target="_blank">Canva</a>
-                    <a href="https://dribbble.com" class="link-item" target="_blank">Dribbble</a>
-                    <a href="https://behance.net" class="link-item" target="_blank">Behance</a>
-                    <a href="https://unsplash.com" class="link-item" target="_blank">Unsplash</a>
-                    <a href="https://www.invisionapp.com" class="link-item" target="_blank">InVision</a>
+                    <a href="https://drive.google.com" class="link-item" target="_blank">Google Drive</a>
+                    <a href="https://pan.baidu.com" class="link-item" target="_blank">百度网盘</a>
+                    <a href="https://onedrive.live.com" class="link-item" target="_blank">OneDrive</a>
+                    <a href="https://drive.google.com" class="link-item" target="_blank">Google 云端硬盘</a>
+                    <a href="https://www.weiyun.com" class="link-item" target="_blank">腾讯微云</a>
+                    <a href="https://www.aliyundrive.com" class="link-item" target="_blank">阿里云盘</a>
+                    <a href="https://cloud.189.cn" class="link-item" target="_blank">天翼云盘</a>
                 </div>
             </div>
 
@@ -168,13 +180,111 @@
                 </div>
                 <div class="links">
                     <a href="https://code.visualstudio.com" class="link-item" target="_blank">VS Code</a>
-                    <a href="https://github.com" class="link-item" target="_blank">GitHub</a>
-                    <a href="https://gitlab.com" class="link-item" target="_blank">GitLab</a>
+                    <a href="https://www.jetbrains.com" class="link-item" target="_blank">JetBrains</a>
                     <a href="https://www.postman.com" class="link-item" target="_blank">Postman</a>
                     <a href="https://insomnia.rest" class="link-item" target="_blank">Insomnia</a>
                     <a href="https://www.atlassian.com/software/jira" class="link-item" target="_blank">Jira</a>
                     <a href="https://slack.com" class="link-item" target="_blank">Slack</a>
                     <a href="https://notion.so" class="link-item" target="_blank">Notion</a>
+                    <a href="https://www.charlesproxy.com" class="link-item" target="_blank">Charles</a>
+                    <a href="https://hoppscotch.io" class="link-item" target="_blank">Hoppscotch</a>
+                    <a href="https://crontab.guru" class="link-item" target="_blank">Crontab Guru</a>
+                    <a href="https://www.phpmyadmin.net" class="link-item" target="_blank">phpMyAdmin</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="design">
+                <div class="category-title">
+                    <div class="category-icon design">🎯</div>
+                    设计 & 资源
+                </div>
+                <div class="links">
+                    <a href="https://www.figma.com" class="link-item" target="_blank">Figma</a>
+                    <a href="https://www.sketch.com" class="link-item" target="_blank">Sketch</a>
+                    <a href="https://www.adobe.com/products/xd.html" class="link-item" target="_blank">Adobe XD</a>
+                    <a href="https://www.canva.com" class="link-item" target="_blank">Canva</a>
+                    <a href="https://dribbble.com" class="link-item" target="_blank">Dribbble</a>
+                    <a href="https://behance.net" class="link-item" target="_blank">Behance</a>
+                    <a href="https://unsplash.com" class="link-item" target="_blank">Unsplash</a>
+                    <a href="https://www.invisionapp.com" class="link-item" target="_blank">InVision</a>
+                    <a href="https://www.iconfont.cn" class="link-item" target="_blank">阿里图标</a>
+                    <a href="https://material.io/icons" class="link-item" target="_blank">Material Icons</a>
+                    <a href="https://www.flaticon.com" class="link-item" target="_blank">Flaticon</a>
+                    <a href="https://iconpark.oceanengine.com" class="link-item" target="_blank">IconPark</a>
+                    <a href="https://www.fonts.net.cn" class="link-item" target="_blank">字体天下</a>
+                    <a href="https://html5up.net" class="link-item" target="_blank">HTML5UP</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="community">
+                <div class="category-title">
+                    <div class="category-icon community">👥</div>
+                    社区 & 论坛
+                </div>
+                <div class="links">
+                    <a href="https://stackoverflow.com" class="link-item" target="_blank">Stack Overflow</a>
+                    <a href="https://www.quora.com" class="link-item" target="_blank">Quora</a>
+                    <a href="https://www.zhihu.com" class="link-item" target="_blank">知乎</a>
+                    <a href="https://juejin.cn" class="link-item" target="_blank">掘金</a>
+                    <a href="https://www.csdn.net" class="link-item" target="_blank">CSDN</a>
+                    <a href="https://www.51cto.com" class="link-item" target="_blank">51CTO</a>
+                    <a href="https://www.cnblogs.com" class="link-item" target="_blank">博客园</a>
+                    <a href="https://segmentfault.com" class="link-item" target="_blank">思否</a>
+                    <a href="https://www.oschina.net" class="link-item" target="_blank">OSCHINA</a>
+                    <a href="https://www.xinpianchang.com" class="link-item" target="_blank">新片场</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="personal">
+                <div class="category-title">
+                    <div class="category-icon personal">👤</div>
+                    个人工具 & 服务
+                </div>
+                <div class="links">
+                    <a href="https://mail.qq.com" class="link-item" target="_blank">QQ邮箱</a>
+                    <a href="https://mail.163.com" class="link-item" target="_blank">网易邮箱</a>
+                    <a href="https://exmail.qq.com" class="link-item" target="_blank">腾讯企业邮箱</a>
+                    <a href="https://music.qq.com" class="link-item" target="_blank">QQ音乐</a>
+                    <a href="https://music.163.com" class="link-item" target="_blank">网易云音乐</a>
+                    <a href="https://www.ximalaya.com" class="link-item" target="_blank">喜马拉雅FM</a>
+                    <a href="https://freepd.com" class="link-item" target="_blank">FreePD.com</a>
+                    <a href="https://music.youtube.com" class="link-item" target="_blank">YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="api">
+                <div class="category-title">
+                    <div class="category-icon api">🔌</div>
+                    API & 文档
+                </div>
+                <div class="links">
+                    <a href="https://learn.microsoft.com/azure/architecture/best-practices/api-design" class="link-item" target="_blank">Web API 设计最佳做法</a>
+                    <a href="https://json-schema.org" class="link-item" target="_blank">JSON Schema</a>
+                    <a href="https://jsonapi.org" class="link-item" target="_blank">JSON:API</a>
+                    <a href="https://www.openapis.org" class="link-item" target="_blank">OpenAPI</a>
+                    <a href="https://graphql.org" class="link-item" target="_blank">GraphQL</a>
+                    <a href="https://platform.openai.com" class="link-item" target="_blank">OpenAI API</a>
+                    <a href="https://www.ruankun.dev/posts/how-to-register-openai-account-in-china" class="link-item" target="_blank">OpenAI注册指南</a>
+                    <a href="https://sms-activate.org" class="link-item" target="_blank">SMS-Activate</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="repository">
+                <div class="category-title">
+                    <div class="category-icon repository">📦</div>
+                    代码仓库 & 镜像
+                </div>
+                <div class="links">
+                    <a href="https://github.com" class="link-item" target="_blank">GitHub</a>
+                    <a href="https://gitee.com" class="link-item" target="_blank">Gitee</a>
+                    <a href="https://gitlab.com" class="link-item" target="_blank">GitLab</a>
+                    <a href="https://hub.docker.com" class="link-item" target="_blank">Docker Hub</a>
+                    <a href="https://git.code.tencent.com" class="link-item" target="_blank">腾讯工蜂</a>
+                    <a href="https://cr.console.aliyun.com" class="link-item" target="_blank">阿里云镜像</a>
+                    <a href="https://mirrors.aliyun.com" class="link-item" target="_blank">阿里云镜像站</a>
+                    <a href="https://mirrors.cloud.tencent.com" class="link-item" target="_blank">腾讯软件源</a>
+                    <a href="https://mirrors.tuna.tsinghua.edu.cn" class="link-item" target="_blank">清华镜像</a>
+                    <a href="https://mirrors.ustc.edu.cn" class="link-item" target="_blank">中科大镜像</a>
                 </div>
             </div>
         </div>

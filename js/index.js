@@ -39,6 +39,43 @@ function filterCategory (category) {
     });
 }
 
+// 添加键盘快捷键支持
+document.addEventListener('keydown', function(e) {
+    const searchInput = document.getElementById('searchInput');
+    
+    // Ctrl+K 或 Cmd+K 聚焦搜索框
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+    }
+    
+    // ESC 键清除搜索
+    if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = '';
+        searchSites();
+        searchInput.blur();
+    }
+});
+
+// 添加分类计数功能
+function updateCategoryCounts() {
+    const categories = document.querySelectorAll('.category');
+    const totalLinks = Array.from(categories).reduce((total, category) => {
+        return total + category.querySelectorAll('.link-item').length;
+    }, 0);
+    
+    // 更新统计数字
+    const statNumber = document.querySelector('.stat-number');
+    if (statNumber) {
+        statNumber.textContent = totalLinks + '+';
+    }
+}
+
+// 页面加载完成后更新计数
+document.addEventListener('DOMContentLoaded', function() {
+    updateCategoryCounts();
+});
+
 // 搜索框实时搜索
 document.getElementById('searchInput').addEventListener('input', searchSites);
 

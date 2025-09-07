@@ -178,6 +178,26 @@ header {
     background: linear-gradient(45deg, #ff6348, #2f3542);
 }
 
+.cloud {
+    background: linear-gradient(45deg, #74b9ff, #0984e3);
+}
+
+.community {
+    background: linear-gradient(45deg, #fd79a8, #e84393);
+}
+
+.personal {
+    background: linear-gradient(45deg, #fdcb6e, #f39c12);
+}
+
+.api {
+    background: linear-gradient(45deg, #00cec9, #00b894);
+}
+
+.repository {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+}
+
 .links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
