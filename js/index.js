@@ -1,25 +1,3 @@
-function searchSites () {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const categories = document.querySelectorAll('.category');
-
-    categories.forEach(category => {
-        const links = category.querySelectorAll('.link-item');
-        let hasVisibleLinks = false;
-
-        links.forEach(link => {
-            const text = link.textContent.toLowerCase();
-            if (text.includes(query)) {
-                link.style.display = 'block';
-                hasVisibleLinks = true;
-            } else {
-                link.style.display = query === '' ? 'block' : 'none';
-                if (query === '') hasVisibleLinks = true;
-            }
-        });
-
-        category.style.display = hasVisibleLinks ? 'block' : 'none';
-    });
-}
 
 function filterCategory (category) {
     const categories = document.querySelectorAll('.category');
@@ -71,9 +49,10 @@ function updateCategoryCounts() {
     }
 }
 
-// 页面加载完成后更新计数
+// 页面加载完成后更新计数和初始化扩展按钮
 document.addEventListener('DOMContentLoaded', function() {
     updateCategoryCounts();
+    initExpandButtons();
 });
 
 // 搜索框实时搜索
@@ -99,3 +78,85 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(category);
     });
 });
+
+// 初始化扩展按钮
+function initExpandButtons() {
+    const categories = document.querySelectorAll('.category');
+    
+    categories.forEach(category => {
+        const links = category.querySelector('.links');
+        const linkItems = links.querySelectorAll('.link-item');
+        
+        // 如果链接数量超过阈值，添加扩展按钮
+        if (linkItems.length > 8) {
+            const expandBtn = document.createElement('button');
+            expandBtn.className = 'expand-btn';
+            expandBtn.textContent = `展开全部 (${linkItems.length})`;
+            expandBtn.onclick = function() {
+                toggleExpand(category, expandBtn);
+            };
+            
+            const footer = document.createElement('div');
+            footer.className = 'category-footer';
+            footer.appendChild(expandBtn);
+            
+            category.appendChild(footer);
+        }
+    });
+}
+
+// 切换扩展/折叠状态
+function toggleExpand(category, button) {
+    const links = category.querySelector('.links');
+    const isExpanded = links.classList.contains('expanded');
+    
+    if (isExpanded) {
+        links.classList.remove('expanded');
+        button.textContent = `展开全部 (${links.querySelectorAll('.link-item').length})`;
+        button.classList.remove('collapse');
+        
+        // 平滑滚动到分类顶部
+        category.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+        links.classList.add('expanded');
+        button.textContent = '收起';
+        button.classList.add('collapse');
+    }
+}
+
+// 增强搜索功能，支持扩展状态
+function searchSites () {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const categories = document.querySelectorAll('.category');
+
+    categories.forEach(category => {
+        const links = category.querySelectorAll('.link-item');
+        let hasVisibleLinks = false;
+
+        links.forEach(link => {
+            const text = link.textContent.toLowerCase();
+            if (text.includes(query)) {
+                link.style.display = 'block';
+                hasVisibleLinks = true;
+            } else {
+                link.style.display = query === '' ? 'block' : 'none';
+                if (query === '') hasVisibleLinks = true;
+            }
+        });
+
+        category.style.display = hasVisibleLinks ? 'block' : 'none';
+        
+        // 搜索时自动展开分类
+        if (hasVisibleLinks && query !== '') {
+            const linksContainer = category.querySelector('.links');
+            if (linksContainer && !linksContainer.classList.contains('expanded')) {
+                linksContainer.classList.add('expanded');
+                const expandBtn = category.querySelector('.expand-btn');
+                if (expandBtn) {
+                    expandBtn.textContent = '收起';
+                    expandBtn.classList.add('collapse');
+                }
+            }
+        }
+    });
+}
